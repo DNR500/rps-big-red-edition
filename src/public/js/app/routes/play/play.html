@@ -1,0 +1,11 @@
+<div class="countdown-clock">{{counter}}</div>
+<div class="v-center">
+    <div class="container-fluid game-choices">
+        <div class="row text-center">
+            <h2>Choose</h2>
+        </div>
+        <div class="row text-center">
+            <button ng-repeat="weapon in playCtrl.weapons" class="rps-button rps-weapon-button text-center" ng-class="playCtrl.establishSelectedWeapon(weapon)" ng-click="playCtrl.selectWeapon($event, weapon)"><img ng-src="{{weapon.imgUrl}}" class="rps-button__img" /> {{weapon.title}}</button>
+        </div>
+    </div>
+</div>

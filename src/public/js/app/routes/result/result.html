@@ -1,0 +1,25 @@
+<div class="v-center">
+    <div class="container-fluid game-choices">
+        <div class="row text-center">
+            <h2>Result</h2>
+        </div>
+        <div class="row text-center results">
+            <div class="rps-card-holder">
+                <div class="rps-player-name rps-player-name--1">{{resultCtrl.playerName}}</div>
+                <div class="rps-result-card"><img ng-src="{{resultCtrl.playerWeapon.imgUrl}}" class="rps-result-card__img" /> {{resultCtrl.playerWeapon.title}}</div>
+            </div>
+            <div class="rps-card-holder">
+                <div class="rps-player-name rps-player-name--2">{{resultCtrl.enemyPlayerName}}</div>
+                <div class="rps-result-card"><img ng-src="{{resultCtrl.enemyPlayerWeapon.imgUrl}}" class="rps-result-card__img" /> {{resultCtrl.enemyPlayerWeapon.title}}</div>
+            </div>
+            <div class="end-of-play-box">
+                <span class="end-of-play-box__title">{{resultCtrl.gameOutcomeMessage}}</span>
+                <div>
+                    <button class="rps-button play-again-button text-center" ng-click="resultCtrl.playAgain()">Play Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

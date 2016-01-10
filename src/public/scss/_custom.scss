@@ -1,0 +1,307 @@
+$first-colour: #FFFFFF;
+$second-colour: #FEADC0;
+$third-colour: #FEADC0;
+$fourth-colour: #EF333F;
+$fifth-colour: #E00000;
+
+body {
+  font-family: 'Oleo Script', cursive;
+  color:$first-colour;
+  background-color: $fifth-colour;
+  overflow: hidden;
+}
+
+h1{
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 1px $third-colour;
+}
+h2{
+  text-shadow: 1px 1px 1px $third-colour;
+  margin-bottom: 30px;
+}
+.name-input {
+  width:300px;
+  color: $third-colour;
+  font-size: 1.8em;
+  background-color: $fifth-colour;
+  border: 1px solid $third-colour;
+  padding: 5px;
+  margin-bottom: 30px;
+}
+.name-input:focus {
+  color: $first-colour;
+  background-color: $fourth-colour;
+  border: 1px solid $first-colour;
+  outline: 0;
+}
+.name-input::selection {
+  background: $fifth-colour;
+}
+.content{
+  position: relative;
+}
+.v-center {
+  min-height: 100%;
+  min-height: 100vh;
+  height:100px;
+
+  display: flex;
+  align-items: center;
+}
+.invisible {
+  visibility: hidden;
+}
+.visible {
+  visibility: visible;
+}
+.rps-button {
+  margin: 0 0 5px 0;
+  font-size: 1.2em;
+  padding: 20px 0;
+  width:100%;
+  color: $third-colour;
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid $third-colour;
+  border-radius: 7px;
+  background-color:$fifth-colour;
+}
+.rps-button:link, .rps-button:visited {
+  color: $third-colour;
+}
+.rps-button:focus, .no-touchevents .rps-button:hover {
+  color: $first-colour;
+  border: 1px solid $first-colour;
+  outline: 0;
+}
+.rps-button:active, .selected-weapon {
+  color: $first-colour;
+  border: 1px solid $first-colour;
+  background-color:$fourth-colour;
+  outline: 0;
+}
+.rps-button__img {
+  margin-top:-2px;
+  width: 20px;
+  height: auto;
+  opacity: 0.7;
+}
+.no-touchevents .rps-button:hover .rps-button__img, .rps-button:active .rps-button__img, .rps-button:focus .rps-button__img{
+  opacity: 1;
+}
+.results {
+  position: relative;
+}
+.rps-player-name {
+  font-size: 1.4em;
+}
+.rps-result-card {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  padding: 20px 40px;
+  width:300px;
+  border: 1px solid $first-colour;
+  border-radius: 7px;
+  background-color:$fifth-colour;
+}
+.rps-result-card__img {
+  margin-top:-2px;
+  width: 20px;
+  height: auto;
+}
+.end-of-play-box {
+  width:100%;
+}
+.end-of-play-box__title {
+  font-size: 1.8em;
+  text-shadow: 1px 1px 1px $third-colour;
+}
+
+@keyframes clock {
+  0%   {opacity:1;}
+  19%  {opacity:0.2;}
+  20%  {opacity:1;}
+  39%  {opacity:0.2;}
+  40%  {opacity:1;}
+  59%  {opacity:0.2;}
+  60%  {opacity:1;}
+  79%  {opacity:0.2;}
+  80%  {opacity:1;}
+  100% {opacity:0.2;}
+}
+
+.countdown-clock {
+  border: 1px dashed $third-colour;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  position:absolute;
+  right:20px;
+  top:80px;
+  font-size: 2.2em;
+  color: $third-colour;
+  opacity: 0.7;
+  animation-name: clock;
+  animation-duration: 5s;
+}
+@media (max-width: 767px) and (orientation : landscape){
+  h2{
+    text-shadow: 1px 1px 1px $third-colour;
+    margin-bottom: 10px;
+    margin-top: 0px;
+  }
+  .rps-weapon-button {
+    width:100px;
+    margin-left: 10px;
+  }
+  .rps-weapon-button:first-child{
+    margin-left: 0;
+  }
+  .rps-card-holder {
+    display:inline-block;
+    margin-left:10px;
+  }
+  .rps-card-holder:first-child {
+    margin-left:0;
+  }
+  .rps-result-card {
+    font-size: 1.8em;
+    width:145px;
+    padding: 20px 0;
+  }
+}
+@media (min-width: 768px) {
+  h1{
+    font-size: 3.2em;
+  }
+  h2{
+    font-size: 2.4em;
+  }
+  .rps-button {
+    font-size: 1.8em;
+    padding: 20px 0;
+    min-width: 120px;
+  }
+  .name-input {
+    width:500px;
+    font-size: 2.2em;
+    padding: 10px;
+  }
+  .rps-button__img {
+    margin-top:-4px;
+    width: 30px;
+  }
+  .rps-card-holder {
+    position: relative;
+    display:inline-block;
+    margin-left:10px;
+  }
+  .rps-card-holder:first-child {
+    margin-left:0;
+  }
+  .rps-player-name {
+    position: absolute;
+    font-size: 1.8em;
+    background-color: $fifth-colour;
+    padding:3px 10px 3px 10px;
+    top: -20px;
+  }
+  .rps-player-name--1{
+    left:20px;
+  }
+  .rps-player-name--2{
+    right:20px;
+  }
+  .rps-result-card {
+    font-size: 1.8em;
+    width:200px;
+    padding: 20px 0;
+  }
+  .rps-result-card__img {
+    display: block;
+    width:90%;
+    margin: 10px auto;
+  }
+  .countdown-clock {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    font-size: 3.8em;
+  }
+}
+@media (min-width: 992px) {
+  h1{
+    font-size: 5.2em;
+  }
+  h2{
+    font-size: 3.0em;
+  }
+  .rps-button {
+    font-size: 2.2em;
+  }
+  .name-input {
+    width:600px;
+    font-size: 2.6em;
+    padding: 15px;
+  }
+  .game-choices {
+    width: 100%;
+  }
+  .rps-button {
+    display: inline-block;
+  }
+  .rps-button__img {
+    display: block;
+    width:90%;
+    margin: 10px auto;
+  }
+  .rps-weapon-button {
+    width:200px;
+    margin-left: 10px;
+  }
+  .rps-player-name {
+    font-size: 2.2em;
+    top:-25px;
+  }
+  .rps-result-card {
+    font-size: 2.2em;
+    width:250px;
+  }
+  .play-again-button {
+    width:510px;
+  }
+  .countdown-clock {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    font-size: 6.2em;
+  }
+}
+
+@media (min-width: 1200px) {
+  h1{
+    font-size: 7.2em;
+  }
+  h2{
+    font-size: 3.8em;
+  }
+  .name-input {
+    width:600px;
+  }
+  .rps-weapon-button {
+    width:230px;
+  }
+  .rps-player-name {
+    font-size: 2.6em;
+    top:-30px;
+  }
+  .rps-result-card {
+    font-size: 2.6em;
+    width:280px;
+  }
+  .play-again-button {
+    width:570px;
+  }
+}
