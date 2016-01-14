@@ -13,7 +13,7 @@ Do a build
 grunt build
 ```
 
-## Get dev environment up and running them play across different devices..
+## Set up to play across different devices..
 If you want to test across devices or other machines on the same network as the host machine you will need to a do new build. Follow the steps below.
 
 Your machines/devices must be on the same network. 
