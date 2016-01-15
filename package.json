@@ -6,6 +6,9 @@
   "directories": {
     "test": "test"
   },
+  "engines": {
+    "node": ">=5.0.0"
+  },
   "dependencies": {
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
