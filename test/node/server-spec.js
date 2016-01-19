@@ -38,7 +38,7 @@ describe('RPS socket server', ()=>{
                 if(count>=3){
                     done();
                 }
-            }
+            };
             socket_1 = ioClient.connect('http://localhost:3000', {'forceNew': true });
             socket_2 = ioClient.connect('http://localhost:3000', {'forceNew': true });
             socket_3 = ioClient.connect('http://localhost:3000', {'forceNew': true });
@@ -70,7 +70,7 @@ describe('RPS socket server', ()=>{
                     expect(socket_1.enemyName).to.equal('secondSocket');
                     done();
                 }
-            }
+            };
 
             var  createSocket2 = ()=>{
                 socket_2 = ioClient.connect('http://localhost:3000', {'forceNew': true, query:'displayname=secondSocket' });
@@ -78,7 +78,7 @@ describe('RPS socket server', ()=>{
                     socket_2.enemyName = data.displayName;
                     checkNames();
                 });
-            }
+            };
             socket_1 = ioClient.connect('http://localhost:3000', {'forceNew': true , query:'displayname=firstSocket'});
             socket_1.once('connect', ()=>{
                 createSocket2();
@@ -94,7 +94,7 @@ describe('RPS socket server', ()=>{
             var emitWeapons = ()=>{
                 socket_1.emit('weapon-selected', {weaponChoice:'scissors'});
                 socket_2.emit('weapon-selected', {weaponChoice:'rock'});
-            }
+            };
 
             var checkChoices = ()=>{
                 count++;
@@ -103,7 +103,7 @@ describe('RPS socket server', ()=>{
                     expect(socket_1.enemyWeapon).to.equal('rock');
                     done();
                 }
-            }
+            };
 
             var createSocket2 = ()=>{
                 socket_2 = ioClient.connect('http://localhost:3000', {'forceNew': true, query:'displayname=secondSocket' });
@@ -114,7 +114,7 @@ describe('RPS socket server', ()=>{
                     socket_2.enemyWeapon = data.weaponChoice;
                     checkChoices();
                 });
-            }
+            };
             socket_1 = ioClient.connect('http://localhost:3000', {'forceNew': true , query:'displayname=firstSocket'});
             socket_1.once('connect', ()=>{
                 createSocket2();
@@ -132,13 +132,13 @@ describe('RPS socket server', ()=>{
                 expect(socket_2.enemyWeapon).to.be.undefined;
                 expect(socket_1.enemyWeapon).to.equal('rock');
                 done();
-            }
+            };
 
             var emitWeapons = ()=>{
                 socket_1.emit('weapon-selected', {weaponChoice:'asdf'});
                 socket_2.emit('weapon-selected', {weaponChoice:'rock'});
                 setTimeout(checkChoices, 1000);
-            }
+            };
 
             var createSocket2 = ()=>{
                 socket_2 = ioClient.connect('http://localhost:3000', {'forceNew': true, query:'displayname=secondSocket' });
@@ -148,7 +148,7 @@ describe('RPS socket server', ()=>{
                 socket_2.once('receive-enemy-weapon', data=>{
                     socket_2.enemyWeapon = data.weaponChoice;
                 });
-            }
+            };
             socket_1 = ioClient.connect('http://localhost:3000', {'forceNew': true , query:'displayname=firstSocket'});
             socket_1.once('connect', ()=>{
                 createSocket2();
@@ -162,13 +162,13 @@ describe('RPS socket server', ()=>{
 
             var callDisconnect = ()=>{
                 socket_1.disconnect();
-            }
+            };
             var checkDisconnect = ()=>{
                 count++;
                 if(count >= 2){
                     done();
                 }
-            }
+            };
 
             var createSocket2 = ()=>{
                 socket_2 = ioClient.connect('http://localhost:3000', {'forceNew': true, query:'displayname=secondSocket' });
@@ -178,7 +178,7 @@ describe('RPS socket server', ()=>{
                 socket_2.once('disconnect', ()=>{
                     checkDisconnect();
                 });
-            }
+            };
             socket_1 = ioClient.connect('http://localhost:3000', {'forceNew': true , query:'displayname=firstSocket'});
             socket_1.once('connect', ()=>{
                 createSocket2();
@@ -213,14 +213,14 @@ describe('RPS socket server', ()=>{
                 if(count >= 2){
                     done();
                 }
-            }
+            };
 
             var createSocket2 = ()=>{
                 socket_2 = ioClient.connect('http://localhost:3000', {'forceNew': true, query:'displayname=secondSocket' });
                 socket_2.once('disconnect', ()=>{
                     checkDisconnect();
                 });
-            }
+            };
             socket_1 = ioClient.connect('http://localhost:3000', {'forceNew': true , query:'displayname=firstSocket'});
             socket_1.once('connect', ()=>{
                 createSocket2();
