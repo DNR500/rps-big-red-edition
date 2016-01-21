@@ -165,7 +165,6 @@ describe('RPS socket server', ()=>{
             socket_1.once('connect', createSocket2);
             socket_1.once('disconnect', checkDisconnect);
         });
-
         it('should signal disconnect due to timeout if connection is not paired within specified timeout', done=>{
             server.stop();
 
@@ -177,7 +176,6 @@ describe('RPS socket server', ()=>{
                 done();
             });
         });
-
         it('should signal disconnect due to timeout if pairs do not disconnect after timeout duration', done=>{
             server.stop();
 

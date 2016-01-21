@@ -30,7 +30,6 @@
       "browserify-ng-html2js": "^1.1.5",
       "browserify-shim": "^3.8.11",
       "browsernizr": "^2.0.1",
-      "bufferutil": "^1.2.1",
       "chai": "^3.4.1",
       "es6-shim": "^0.34.0",
       "grunt": "^0.4.5",
