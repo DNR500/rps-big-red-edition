@@ -69,8 +69,7 @@
       "phantomjs": "^1.9.19",
       "sinon": "^1.17.2",
       "socket.io-client": "^1.4.4",
-      "source-map-support": "^0.3.3",
-      "utf-8-validate": "^1.2.1"
+      "source-map-support": "^0.3.3"
   },
   "scripts": {
     "start": "node build/server.js",
